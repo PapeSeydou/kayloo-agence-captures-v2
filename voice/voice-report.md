@@ -92,3 +92,25 @@ drift against the rest of the set.
 
 Files under `_replaced/` are kept for reference only. They are the earlier takes of scene 07 and of scene 02,
 superseded by the wording above.
+
+## Update, four re-cut takes (2026-11-11, second batch)
+
+Same model, same voice, same style prompt string, same 150 ms silence and the same loudness target.
+
+| File | Duration (s) | Transcript matches | Tries | Remarks |
+|---|---|---|---|---|
+| v1-scene-02-compte-code-Kore.wav | 15.10 | yes | 4 | Replaces v1-scene-02-compte. The three attempts that kept [short pause] spoke the tag aloud ("short pause", "short pose", "charte pause"), so the pause tags were removed and the take was generated again without them. [chuckle] was kept: it is not spoken and it produces an audible laugh. Wording unchanged. |
+| v1-scene-05b-statut-Kore.wav | 17.70 | yes | 4 | New scene. Three attempts were rejected for inserted words that are not in the script ("Merci", "voiront", "outil"); the fourth is clean. Both ASRs hear "Compte", "Mon profil", "Validation" and "Validation de compte" as written. |
+| v2-scene-02-packs-detail-Kore.wav | 23.26 | yes | 6 | Replaces v2-scene-02-packs-mobile-money. One attempt read "Short pause" aloud, one paraphrased the pack list ("Choisissez ensuite Découverte, Standard…"), one was clean but ended up unused after a selection bug. The kept take reads the numbers in order: cinq, dix, trente, deux, cinquante, trois. |
+| v2-scene-03-activation-Kore.wav | 5.16 | yes | 1 | Replaces the earlier activation take. "et vos crédits sont prêts" instead of "arrivent". No tag spoken. |
+
+Levels: -14.85, -14.84, -14.86 and -14.85 dBFS of active speech, peaks 0.836, 0.824, 0.889 and 0.899, so no
+clipping and no drift against the rest of the set. Every file has 150 ms of digital silence at both ends. The
+first take measures 0.25 s of tail by the 0.012 threshold because the laugh decays softly after the last word;
+the digital silence itself is still 150 ms.
+
+Tags: [chuckle] did not have to be replaced by [laughing], it is never read aloud. Only the [short pause] tags of
+the first take were dropped, because three attempts in a row spoke them.
+
+Moved to `_replaced/` and kept: v1-scene-02-compte-Kore.wav, v2-scene-02-packs-mobile-money-Kore.wav and the
+earlier v2-scene-03-activation-Kore.wav (5.03 s).

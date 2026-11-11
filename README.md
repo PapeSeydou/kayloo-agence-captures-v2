@@ -18,12 +18,12 @@ validation de compte, activation du pack Découverte, création et publication d
 | `assets/photos/` | Six photos de biens, 2400 × 1800, sans personne ni filigrane |
 | `assets/deck/` | Slide 12 du deck V3.1, texte et image |
 | `assets/seed/` | Scripts de base, seed du compte, harnais de capture, fichiers d'origine des correctifs |
-| `voice/` | Les 14 prises de voix-off Kore (vidéos 1 et 2), en WAV 24 kHz mono, et `voice-report.md` |
+| `voice/` | Les 15 prises de voix-off Kore (vidéos 1 et 2), en WAV 24 kHz mono, et `voice-report.md` |
 | `flow.md` | Rapport complet : ordre des écrans, tableau deck/app, écarts, crédits, limites, reproductibilité |
 
 ## Voix-off
 
-`voice/` contient les 14 prises de la voix Kore pour les deux vidéos : 6 pour la vidéo 1, dont les re-takes et
+`voice/` contient les 15 prises de la voix Kore pour les deux vidéos : 6 pour la vidéo 1, dont les re-takes et
 la scène de fin « écosystème », puis 8 pour la vidéo 2. Même modèle et mêmes réglages que les prises approuvées
 (`google/gemini-3.8-flash-tts`, réponse PCM 24 kHz convertie en WAV mono 16 bits), même prompt de style dans
 chaque appel. Chaque fichier porte 150 ms de silence au début et à la fin.
