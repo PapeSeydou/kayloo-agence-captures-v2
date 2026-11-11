@@ -18,15 +18,19 @@ validation de compte, activation du pack Découverte, création et publication d
 | `assets/photos/` | Six photos de biens, 2400 × 1800, sans personne ni filigrane |
 | `assets/deck/` | Slide 12 du deck V3.1, texte et image |
 | `assets/seed/` | Scripts de base, seed du compte, harnais de capture, fichiers d'origine des correctifs |
-| `voice/` | Les 13 prises de voix-off Kore (vidéos 1 et 2), en WAV 24 kHz mono, et `voice-report.md` |
+| `voice/` | Les 14 prises de voix-off Kore (vidéos 1 et 2), en WAV 24 kHz mono, et `voice-report.md` |
 | `flow.md` | Rapport complet : ordre des écrans, tableau deck/app, écarts, crédits, limites, reproductibilité |
 
 ## Voix-off
 
-`voice/` contient les 13 prises de la voix Kore pour les deux vidéos : 5 pour la vidéo 1, dont 3 re-takes
-et 2 scènes nouvelles, puis 8 pour la vidéo 2. Même modèle et mêmes réglages que les prises approuvées
+`voice/` contient les 14 prises de la voix Kore pour les deux vidéos : 6 pour la vidéo 1, dont les re-takes et
+la scène de fin « écosystème », puis 8 pour la vidéo 2. Même modèle et mêmes réglages que les prises approuvées
 (`google/gemini-3.8-flash-tts`, réponse PCM 24 kHz convertie en WAV mono 16 bits), même prompt de style dans
 chaque appel. Chaque fichier porte 150 ms de silence au début et à la fin.
+
+Trois prises ont été révisées le 2026-11-11 : « registre de commerce » à la place du RCCM dans la scène 07,
+une scène de fin « écosystème KAYLOO », et la mention du mobile money dans la scène des packs. Les deux prises
+qu'elles remplacent sont dans `voice/_replaced/`.
 
 `voice-report.md` liste les durées, le nombre d'essais par prise, les contrôles de prononciation faits à
 l'ASR et ce qui n'a pas pu être vérifié.

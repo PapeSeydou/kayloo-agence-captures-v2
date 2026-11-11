@@ -1,6 +1,10 @@
 # KAYLOO voice-over takes, videos 1 and 2, voice Kore
 
-13 WAV files, generated with the same model and the same settings as the approved Video 1 takes.
+WAV files generated with the same model and the same settings as the approved Video 1 takes.
+
+Updated on 2026-11-11: three revised takes were added, `v1-scene-07-documents-registre`,
+`v1-scene-06-fin-ecosysteme` and `v2-scene-02-packs-mobile-money`. The two takes they replace,
+`v1-scene-07-documents` and `v2-scene-02-packs`, moved to `_replaced/`. There are now 14 active takes.
 
 ## Settings used for every take
 
@@ -23,7 +27,7 @@ beaucoup d'énergie positive, jamais criard. Prononce « KAYLOO » comme « Kay-
 
 ## Files
 
-Total spoken programme: 91.4 s across 13 takes.
+Total spoken programme: 99.0 s across 14 active takes.
 
 | File | Duration (s) | Transcript matches | Tries | Remarks |
 |---|---|---|---|---|
@@ -71,3 +75,20 @@ Transcripts come from `openai/whisper-large-v3`, cross-checked with `qwen/qwen3-
 ## Regenerating
 
 The generator lives in this session's workspace, not in the delivery folder. It calls the endpoint above with one request per take, transcribes each result, and retries up to three times when a tag is spoken or the transcript drifts.
+
+## Update, three revised takes (2026-11-11)
+
+Same model, same voice, same style prompt string, same 150 ms silence and the same loudness target as the
+first thirteen, so they drop into the same timeline.
+
+| File | Duration (s) | Transcript matches | Tries | Remarks |
+|---|---|---|---|---|
+| v1-scene-07-documents-registre-Kore.wav | 9.11 | yes | 1 | Replaces the RCCM wording with "registre de commerce". Both ASRs hear "NINEA, registre de commerce et pièce d'identité" and "quarante-huit heures". |
+| v1-scene-06-fin-ecosysteme-Kore.wav | 4.27 | yes | 1 | New closing scene. ASR spells the brand "Kylo" and "Kailo", the usual spelling variance; the words are correct. "point" is spoken, with Whisper writing it as a dot again. |
+| v2-scene-02-packs-mobile-money-Kore.wav | 11.47 | yes | 1 | Longer than the earlier packs take (8.59 s) because of the new sentence. Both ASRs hear "mobile money", Qwen verbatim. |
+
+Levels: -14.85, -14.85 and -15.91 dBFS of active speech, peaks 0.868, 0.859 and 0.930, so no clipping and no
+drift against the rest of the set.
+
+Files under `_replaced/` are kept for reference only. They are the earlier takes of scene 07 and of scene 02,
+superseded by the wording above.
