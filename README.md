@@ -28,9 +28,10 @@ la scène de fin « écosystème », puis 8 pour la vidéo 2. Même modèle et m
 (`google/gemini-3.8-flash-tts`, réponse PCM 24 kHz convertie en WAV mono 16 bits), même prompt de style dans
 chaque appel. Chaque fichier porte 150 ms de silence au début et à la fin.
 
-Trois prises ont été révisées le 2026-11-11 : « registre de commerce » à la place du RCCM dans la scène 07,
-une scène de fin « écosystème KAYLOO », et la mention du mobile money dans la scène des packs. Les deux prises
-qu'elles remplacent sont dans `voice/_replaced/`.
+Les prises ont été révisées plusieurs fois le 2026-11-11, au fil du montage : passage au « registre de commerce »,
+scène de fin « écosystème KAYLOO », mobile money dans la scène des packs, puis une dernière passe pour supprimer
+les répétitions, ajouter le bouton « Vérifier mon compte » et raccourcir la scène des packs. Toutes les prises
+remplacées sont conservées dans `voice/_replaced/`.
 
 `voice-report.md` liste les durées, le nombre d'essais par prise, les contrôles de prononciation faits à
 l'ASR et ce qui n'a pas pu être vérifié.

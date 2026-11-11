@@ -114,3 +114,25 @@ the first take were dropped, because three attempts in a row spoke them.
 
 Moved to `_replaced/` and kept: v1-scene-02-compte-Kore.wav, v2-scene-02-packs-mobile-money-Kore.wav and the
 earlier v2-scene-03-activation-Kore.wav (5.03 s).
+
+## Update, three takes re-cut for the new scene edit (2026-11-11, third batch)
+
+The scene edit removed the repeated sentences, added the "Vérifier mon compte" tap and shortened the packs
+scene. These three takes carry the new wording. They use the same model, voice and style prompt string, the
+same 150 ms of silence and the same loudness target as the rest. None of the three texts contains expression
+tags, so nothing could be read aloud.
+
+| File | Duration (s) | Transcript matches | Tries | Remarks |
+|---|---|---|---|---|
+| v1-scene-05b-statut-Kore.wav | 13.02 | yes | 1 | New wording, no repeated "Votre compte est créé". Both ASRs hear "Compte", "Mon profil", "Validation" and "statut de votre vérification". |
+| v1-scene-07-documents-Kore.wav | 13.10 | yes | 3 | New wording with "Vérifier mon compte", NINEA, registre de commerce, "Envoyer". Two attempts were rejected: one read "affaires" and "avancées" instead of the script, one landed 1.6 dB quiet because its peak hit the ceiling. The kept take is clean and at -14.82 dBFS. |
+| v2-scene-02-packs-Kore.wav | 9.92 | yes | 2 | Shorter packs scene. Attempt 1 said "mobile monnaie" in French, attempt 2 says it in English as before. |
+
+Levels: -14.88, -14.82 and -14.80 dBFS of active speech, peaks 0.908, 0.764 and 0.734, so no clipping.
+Lead and tail silence measure 0.15 s everywhere except the documents take, whose lead measures 0.22 s because
+the first syllable starts softly above the trim threshold; the digital silence is still 150 ms.
+
+Archived in `_replaced/`: the previous v1-scene-05b-statut (17.70 s), v1-scene-07-documents-registre (9.11 s)
+and v2-scene-02-packs-detail (23.26 s). Note that `_replaced/` also holds the very first takes, which share the
+names `v1-scene-07-documents-Kore.wav` and `v2-scene-02-packs-Kore.wav` with today's active files; the active
+ones are in `voice/`, the historical ones in `voice/_replaced/`.
