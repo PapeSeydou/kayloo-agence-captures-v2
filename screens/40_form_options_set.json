@@ -1,0 +1,396 @@
+{
+  "screen": "45_form_options_set",
+  "file": "40_form_options_set.png",
+  "url": "http://kayloo.local:8000/admin/property/create",
+  "viewport": {
+    "width": 1440,
+    "height": 810
+  },
+  "device_scale_factor": 2,
+  "full_page": true,
+  "scroll": {
+    "x": 0,
+    "y": 166,
+    "w": 1440,
+    "h": 1093
+  },
+  "elements": [
+    {
+      "label": "Vue d'ensemble",
+      "type": "link",
+      "x": 16,
+      "y": 152,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Biens",
+      "type": "link",
+      "x": 16,
+      "y": 236,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Annonces",
+      "type": "link",
+      "x": 0,
+      "y": 318,
+      "width": 478,
+      "height": 72,
+      "tap": false
+    },
+    {
+      "label": "Nouvelle annonce",
+      "type": "link",
+      "x": 0,
+      "y": 390,
+      "width": 478,
+      "height": 72,
+      "tap": false
+    },
+    {
+      "label": "Favoris",
+      "type": "link",
+      "x": 0,
+      "y": 462,
+      "width": 478,
+      "height": 72,
+      "tap": false
+    },
+    {
+      "label": "CRM",
+      "type": "link",
+      "x": 16,
+      "y": 536,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Boutique crédits",
+      "type": "link",
+      "x": 16,
+      "y": 620,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Mon équipe",
+      "type": "link",
+      "x": 16,
+      "y": 704,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Compte",
+      "type": "link",
+      "x": 16,
+      "y": 788,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Nouveau bien TYPE D'ANNONCE Vente Mettre en vente un bien immobilier Location Louer un ...",
+      "type": "card",
+      "x": 496,
+      "y": 0,
+      "width": 2368,
+      "height": 1846,
+      "tap": false,
+      "clipped": true
+    },
+    {
+      "label": "Nouveau bien TYPE D'ANNONCE Vente Mettre en vente un bien immobilier Location Louer un ...",
+      "type": "card",
+      "x": 528,
+      "y": 0,
+      "width": 2304,
+      "height": 1846,
+      "tap": false,
+      "clipped": true
+    },
+    {
+      "label": "Nouveau bien",
+      "type": "card",
+      "x": 530,
+      "y": 0,
+      "width": 2300,
+      "height": 114,
+      "tap": false,
+      "clipped": true
+    },
+    {
+      "label": "Nouveau bien",
+      "type": "card",
+      "x": 602,
+      "y": 0,
+      "width": 211,
+      "height": 48,
+      "tap": false,
+      "clipped": true
+    },
+    {
+      "label": "TYPE D'ANNONCE Vente Mettre en vente un bien immobilier Location Louer un bien (vide ou...",
+      "type": "card",
+      "x": 530,
+      "y": 76,
+      "width": 2300,
+      "height": 1728,
+      "tap": false
+    },
+    {
+      "label": "Vente Mettre en vente un bien immobilier Location Louer un bien (vide ou meublé)",
+      "type": "card",
+      "x": 620,
+      "y": 223,
+      "width": 2120,
+      "height": 170,
+      "tap": false
+    },
+    {
+      "label": "Vente Mettre en vente un bien immobilier",
+      "type": "button",
+      "x": 620,
+      "y": 223,
+      "width": 1048,
+      "height": 170,
+      "tap": false
+    },
+    {
+      "label": "Vente",
+      "type": "card",
+      "x": 786,
+      "y": 269,
+      "width": 393,
+      "height": 42,
+      "tap": false
+    },
+    {
+      "label": "Mettre en vente un bien immobilier",
+      "type": "card",
+      "x": 786,
+      "y": 316,
+      "width": 393,
+      "height": 31,
+      "tap": false
+    },
+    {
+      "label": "Location Louer un bien (vide ou meublé)",
+      "type": "button",
+      "x": 1692,
+      "y": 223,
+      "width": 1048,
+      "height": 170,
+      "tap": false
+    },
+    {
+      "label": "Location",
+      "type": "card",
+      "x": 1858,
+      "y": 269,
+      "width": 354,
+      "height": 42,
+      "tap": false
+    },
+    {
+      "label": "Louer un bien (vide ou meublé)",
+      "type": "card",
+      "x": 1858,
+      "y": 316,
+      "width": 354,
+      "height": 31,
+      "tap": false
+    },
+    {
+      "label": "Location vide",
+      "type": "button",
+      "x": 620,
+      "y": 500,
+      "width": 1050,
+      "height": 75,
+      "tap": false
+    },
+    {
+      "label": "Location meublée",
+      "type": "button",
+      "x": 1690,
+      "y": 500,
+      "width": 1050,
+      "height": 75,
+      "tap": false
+    },
+    {
+      "label": "1 Identification",
+      "type": "button",
+      "x": 572,
+      "y": 735,
+      "width": 290,
+      "height": 92,
+      "tap": false
+    },
+    {
+      "label": "2 Localisation",
+      "type": "button",
+      "x": 862,
+      "y": 735,
+      "width": 275,
+      "height": 92,
+      "tap": false
+    },
+    {
+      "label": "3 Caractéristiques",
+      "type": "button",
+      "x": 1137,
+      "y": 735,
+      "width": 331,
+      "height": 92,
+      "tap": false
+    },
+    {
+      "label": "4 Photos & Description",
+      "type": "button",
+      "x": 1468,
+      "y": 735,
+      "width": 385,
+      "height": 92,
+      "tap": false
+    },
+    {
+      "label": "5 Prix",
+      "type": "button",
+      "x": 1853,
+      "y": 735,
+      "width": 174,
+      "height": 92,
+      "tap": false
+    },
+    {
+      "label": "6 Options",
+      "type": "button",
+      "x": 2028,
+      "y": 735,
+      "width": 223,
+      "height": 92,
+      "tap": false
+    },
+    {
+      "label": "Exposé",
+      "type": "link",
+      "x": 612,
+      "y": 941,
+      "width": 92,
+      "height": 37,
+      "tap": false
+    },
+    {
+      "label": "Géré",
+      "type": "link",
+      "x": 736,
+      "y": 941,
+      "width": 80,
+      "height": 37,
+      "tap": false
+    },
+    {
+      "label": "Masqué",
+      "type": "link",
+      "x": 848,
+      "y": 941,
+      "width": 102,
+      "height": 37,
+      "tap": false
+    },
+    {
+      "label": "Archivé",
+      "type": "link",
+      "x": 982,
+      "y": 941,
+      "width": 96,
+      "height": 37,
+      "tap": false
+    },
+    {
+      "label": "Disponible depuis",
+      "type": "link",
+      "x": 612,
+      "y": 1174,
+      "width": 1052,
+      "height": 37,
+      "tap": false
+    },
+    {
+      "label": "Date d'acquisition",
+      "type": "link",
+      "x": 612,
+      "y": 1439,
+      "width": 691,
+      "height": 37,
+      "tap": false
+    },
+    {
+      "label": "Prix d'acquisition",
+      "type": "link",
+      "x": 1335,
+      "y": 1439,
+      "width": 691,
+      "height": 37,
+      "tap": false
+    },
+    {
+      "label": "acquisition_price",
+      "type": "input",
+      "x": 1335,
+      "y": 1483,
+      "width": 691,
+      "height": 63,
+      "tap": false
+    },
+    {
+      "label": "Frais d'acquisition",
+      "type": "link",
+      "x": 2057,
+      "y": 1439,
+      "width": 691,
+      "height": 37,
+      "tap": false
+    },
+    {
+      "label": "acquisition_fee",
+      "type": "input",
+      "x": 2057,
+      "y": 1483,
+      "width": 691,
+      "height": 63,
+      "tap": false
+    },
+    {
+      "label": "Précédent",
+      "type": "button",
+      "x": 612,
+      "y": 1672,
+      "width": 246,
+      "height": 72,
+      "tap": false
+    },
+    {
+      "label": "Créer l'annonce",
+      "type": "button",
+      "x": 2426,
+      "y": 1672,
+      "width": 322,
+      "height": 72,
+      "tap": false
+    }
+  ],
+  "image": {
+    "width": 2880,
+    "height": 2186
+  }
+}

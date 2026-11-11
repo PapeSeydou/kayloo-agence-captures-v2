@@ -1,0 +1,13 @@
+{
+  "screen": "14_ajouter_un_bien_hover",
+  "element": {
+    "label": "Nouveau bien",
+    "type": "button",
+    "x": 28,
+    "y": 28,
+    "width": 294,
+    "height": 72,
+    "tap": true
+  },
+  "note": "Crop 2x de l'element (marge 14 px CSS), coordonnees dans l'image du crop."
+}

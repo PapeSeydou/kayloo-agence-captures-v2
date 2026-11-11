@@ -1,0 +1,84 @@
+Vue d'ensemble
+Biens
+Annonces
+Nouvelle annonce
+Favoris
+CRM
+Boutique crédits
+Mon équipe
+Compte
+Voir le site Kayloo
+Français
+Awa Diop
+Annonces
+Administration
+Annonces
+Ajouter
+Nouveau bien
+
+TYPE D'ANNONCE
+
+Vente
+Mettre en vente un bien immobilier
+Location
+Louer un bien (vide ou meublé)
+
+PRÉCISEZ LE TYPE DE LOCATION
+
+Location vide
+Location meublée
+Location vide sélectionnée.
+1
+Identification
+2
+Localisation
+3
+Caractéristiques
+4
+Photos & Description
+5
+Prix
+6
+Options
+INFORMATIONS GÉNÉRALES
+Label
+L'intitulé est obligatoire.
+Titre affiché sur le site
+Type
+Appartement F3
+Appartement F4
+Appartement F5
+Bureau
+Duplex
+Magasin
+Parking
+Studio
+Terrain
+Villa
+×
+Appartement F3
+Type de bien (villa, appartement…)
+Usage
+Résidentiel
+Commercial
+Bureau
+Industriel
+Terrain
+Mixte
+×
+Résidentiel
+Résidentiel, commercial…
+RELATIONS
+Immeuble
+Sélectionnez un Immeuble
+Immeuble rattaché (optionnel)
+DURÉE DE LOCATION
+Période de location
+Journalier
+Hebdomadaire
+Mensuel
+Annuel
+×
+Mensuel
+Durée minimale du bail
+Suivant

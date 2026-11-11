@@ -1,0 +1,340 @@
+{
+  "screen": "11_packages_decouverte_selected",
+  "file": "11_packages_decouverte_selected.png",
+  "url": "http://kayloo.local:8000/admin/credits-shop",
+  "viewport": {
+    "width": 1440,
+    "height": 810
+  },
+  "device_scale_factor": 2,
+  "full_page": false,
+  "scroll": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 1483
+  },
+  "elements": [
+    {
+      "label": "Vue d'ensemble",
+      "type": "link",
+      "x": 16,
+      "y": 152,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Biens",
+      "type": "link",
+      "x": 16,
+      "y": 236,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "CRM",
+      "type": "link",
+      "x": 16,
+      "y": 320,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Boutique crédits",
+      "type": "link",
+      "x": 16,
+      "y": 404,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Mon équipe",
+      "type": "link",
+      "x": 16,
+      "y": 488,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Compte",
+      "type": "link",
+      "x": 16,
+      "y": 572,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Voir le site Kayloo",
+      "type": "link",
+      "x": 1993,
+      "y": 8,
+      "width": 315,
+      "height": 96,
+      "tap": false
+    },
+    {
+      "label": "Français",
+      "type": "button",
+      "x": 2324,
+      "y": 20,
+      "width": 254,
+      "height": 72,
+      "tap": false
+    },
+    {
+      "label": "Menu utilisateur",
+      "type": "link",
+      "x": 2626,
+      "y": 16,
+      "width": 206,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "KAYLOO Boutique crédits SOLDE DE L'AGENCE 0 crédits Agence Horizon Immobilier Solde épu...",
+      "type": "card",
+      "x": 496,
+      "y": 196,
+      "width": 2368,
+      "height": 1424,
+      "tap": false,
+      "clipped": true
+    },
+    {
+      "label": "SOLDE DE L'AGENCE 0 crédits Agence Horizon Immobilier Solde épuisé 1 crédit = 1 publica...",
+      "type": "card",
+      "x": 528,
+      "y": 396,
+      "width": 2304,
+      "height": 240,
+      "tap": false
+    },
+    {
+      "label": "Découverte 5 crédits 5 annonces actives 1 utilisateur Leads correspondant à vos annonce...",
+      "type": "card",
+      "x": 528,
+      "y": 750,
+      "width": 485,
+      "height": 834,
+      "tap": false
+    },
+    {
+      "label": "Découverte",
+      "type": "card",
+      "x": 572,
+      "y": 942,
+      "width": 397,
+      "height": 42,
+      "tap": false
+    },
+    {
+      "label": "5",
+      "type": "card",
+      "x": 572,
+      "y": 1005,
+      "width": 397,
+      "height": 77,
+      "tap": false
+    },
+    {
+      "label": "crédits",
+      "type": "card",
+      "x": 572,
+      "y": 1089,
+      "width": 397,
+      "height": 37,
+      "tap": false
+    },
+    {
+      "label": "5 annonces actives 1 utilisateur Leads correspondant à vos annonces CRM intégré Statist...",
+      "type": "card",
+      "x": 572,
+      "y": 1142,
+      "width": 397,
+      "height": 210,
+      "tap": false
+    },
+    {
+      "label": "0 FCFA TTC",
+      "type": "card",
+      "x": 660,
+      "y": 1368,
+      "width": 222,
+      "height": 63,
+      "tap": false
+    },
+    {
+      "label": "Standard 10 crédits 10 annonces actives 1 utilisateur Mise en avant des annonces 2 bien...",
+      "type": "card",
+      "x": 1045,
+      "y": 750,
+      "width": 485,
+      "height": 834,
+      "tap": false
+    },
+    {
+      "label": "Standard",
+      "type": "card",
+      "x": 1089,
+      "y": 942,
+      "width": 397,
+      "height": 42,
+      "tap": false
+    },
+    {
+      "label": "10",
+      "type": "card",
+      "x": 1089,
+      "y": 1005,
+      "width": 397,
+      "height": 77,
+      "tap": false
+    },
+    {
+      "label": "crédits",
+      "type": "card",
+      "x": 1089,
+      "y": 1089,
+      "width": 397,
+      "height": 37,
+      "tap": false
+    },
+    {
+      "label": "10 annonces actives 1 utilisateur Mise en avant des annonces 2 biens en vedette / mois ...",
+      "type": "card",
+      "x": 1089,
+      "y": 1142,
+      "width": 397,
+      "height": 315,
+      "tap": false
+    },
+    {
+      "label": "59 000 FCFA TTC",
+      "type": "card",
+      "x": 1136,
+      "y": 1473,
+      "width": 304,
+      "height": 63,
+      "tap": false
+    },
+    {
+      "label": "⭐ Populaire Premium 30 crédits 30 annonces actives 2 utilisateurs Mise en avant des ann...",
+      "type": "card",
+      "x": 1563,
+      "y": 750,
+      "width": 485,
+      "height": 834,
+      "tap": false
+    },
+    {
+      "label": "⭐ Populaire",
+      "type": "card",
+      "x": 1712,
+      "y": 734,
+      "width": 187,
+      "height": 41,
+      "tap": false
+    },
+    {
+      "label": "Premium",
+      "type": "card",
+      "x": 1607,
+      "y": 942,
+      "width": 397,
+      "height": 42,
+      "tap": false
+    },
+    {
+      "label": "30",
+      "type": "card",
+      "x": 1607,
+      "y": 1005,
+      "width": 397,
+      "height": 77,
+      "tap": false
+    },
+    {
+      "label": "crédits",
+      "type": "card",
+      "x": 1607,
+      "y": 1089,
+      "width": 397,
+      "height": 37,
+      "tap": false
+    },
+    {
+      "label": "30 annonces actives 2 utilisateurs Mise en avant des annonces 5 biens en vedette / mois...",
+      "type": "card",
+      "x": 1607,
+      "y": 1142,
+      "width": 397,
+      "height": 315,
+      "tap": false
+    },
+    {
+      "label": "88 500 FCFA TTC",
+      "type": "card",
+      "x": 1653,
+      "y": 1473,
+      "width": 304,
+      "height": 63,
+      "tap": false
+    },
+    {
+      "label": "Business 50 crédits 50 annonces actives 3 utilisateurs Mise en avant des annonces 10 bi...",
+      "type": "card",
+      "x": 528,
+      "y": 1616,
+      "width": 485,
+      "height": 4,
+      "tap": false,
+      "clipped": true
+    },
+    {
+      "label": "Aucune commande pour le moment.",
+      "type": "card",
+      "x": 2096,
+      "y": 750,
+      "width": 736,
+      "height": 259,
+      "tap": false
+    },
+    {
+      "label": "Aucune commande pour le moment.",
+      "type": "card",
+      "x": 2098,
+      "y": 752,
+      "width": 732,
+      "height": 255,
+      "tap": false
+    },
+    {
+      "label": "Comment ça marche ? Achetez un pack de crédits Chaque demande de publication coûte 1 cr...",
+      "type": "card",
+      "x": 2096,
+      "y": 1041,
+      "width": 736,
+      "height": 238,
+      "tap": false
+    },
+    {
+      "label": "Comment ça marche ? Achetez un pack de crédits Chaque demande de publication coûte 1 cr...",
+      "type": "card",
+      "x": 2098,
+      "y": 1043,
+      "width": 732,
+      "height": 234,
+      "tap": false
+    }
+  ],
+  "image": {
+    "width": 2880,
+    "height": 1620
+  }
+}

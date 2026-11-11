@@ -1,0 +1,158 @@
+{
+  "screen": "53_public_property_desktop",
+  "file": "46_public_property_desktop.png",
+  "url": "http://kayloo.local:8000/bien/sn-location-appartement-f3-lumineux-aux-almadies-dakar-4cfd16ceacaf",
+  "viewport": {
+    "width": 1440,
+    "height": 810
+  },
+  "device_scale_factor": 2,
+  "full_page": false,
+  "scroll": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 3080
+  },
+  "elements": [
+    {
+      "label": "Accueil",
+      "type": "link",
+      "x": 304,
+      "y": 258,
+      "width": 163,
+      "height": 112,
+      "tap": false
+    },
+    {
+      "label": "Louer",
+      "type": "link",
+      "x": 469,
+      "y": 258,
+      "width": 174,
+      "height": 112,
+      "tap": false
+    },
+    {
+      "label": "Acheter",
+      "type": "link",
+      "x": 645,
+      "y": 258,
+      "width": 204,
+      "height": 112,
+      "tap": false
+    },
+    {
+      "label": "Construire",
+      "type": "link",
+      "x": 851,
+      "y": 258,
+      "width": 205,
+      "height": 112,
+      "tap": false
+    },
+    {
+      "label": "Investisseurs",
+      "type": "link",
+      "x": 1058,
+      "y": 258,
+      "width": 237,
+      "height": 112,
+      "tap": false
+    },
+    {
+      "label": "Nos Partenaires",
+      "type": "link",
+      "x": 1298,
+      "y": 258,
+      "width": 307,
+      "height": 112,
+      "tap": false
+    },
+    {
+      "label": "Publicité",
+      "type": "link",
+      "x": 1607,
+      "y": 258,
+      "width": 214,
+      "height": 112,
+      "tap": false
+    },
+    {
+      "label": "Nouvelle annonce",
+      "type": "link",
+      "x": 2035,
+      "y": 283,
+      "width": 301,
+      "height": 62,
+      "tap": false
+    },
+    {
+      "label": "Changer de langue",
+      "type": "button",
+      "x": 2448,
+      "y": 290,
+      "width": 130,
+      "height": 48,
+      "tap": false
+    },
+    {
+      "label": "ANNONCES",
+      "type": "link",
+      "x": 424,
+      "y": 388,
+      "width": 158,
+      "height": 32,
+      "tap": false
+    },
+    {
+      "label": "Partager",
+      "type": "button",
+      "x": 2338,
+      "y": 516,
+      "width": 64,
+      "height": 64,
+      "tap": false
+    },
+    {
+      "label": "Ajouter aux favoris",
+      "type": "button",
+      "x": 2418,
+      "y": 516,
+      "width": 64,
+      "height": 64,
+      "tap": false
+    },
+    {
+      "label": "+ 3 Photos",
+      "type": "link",
+      "x": 1797,
+      "y": 1242,
+      "width": 683,
+      "height": 378,
+      "tap": false
+    },
+    {
+      "label": "+ 3 Photos",
+      "type": "button",
+      "x": 1797,
+      "y": 1242,
+      "width": 683,
+      "height": 378,
+      "tap": false
+    },
+    {
+      "label": "KIA · Assistant Kayloo",
+      "type": "button",
+      "x": 2720,
+      "y": 1316,
+      "width": 112,
+      "height": 112,
+      "tap": false
+    }
+  ],
+  "image": {
+    "width": 2880,
+    "height": 1620
+  }
+}

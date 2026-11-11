@@ -1,0 +1,80 @@
+GRILLE TARIFAIRE
+KAYLOO IMMO
+Offre dédiée aux agences immobilières
+
+Source : PREZ Partenaire V3.1, slide 12 — "KAYLOO — Présentation Partenaire V3.1.pdf"
+(fichier local : C:/Users/log/Downloads/Work/KAYLOO — Présentation Partenaire V3.1.pdf)
+Texte extrait du PDF, colonnes dans l'ordre d'affichage.
+
+COLONNES (ordre) : DÉCOUVERTE | STANDARD | PREMIUM | BUSINESS (couronne sur BUSINESS)
+
+Fonctionnalités
+Tarif trimestriel TTC
+Annonces actives
+Utilisateurs
+Mise en avant des annonces
+Biens en vedette / mois
+Crédits inclus
+Leads liés à vos annonces
+Leads générés qualifiés
+CRM intégré
+Statistiques / tableau de bord
+
+DÉCOUVERTE
+Gratuit
+5
+1
+—
+0
+5
+✓
+—
+✓
+✓
+
+STANDARD
+59 000 F
+10
+1
+✓
+2
+10
+✓
+2
+✓
+✓
+
+PREMIUM
+88 500 F
+30
+2
+✓
+5
+30
+✓
+5
+✓
+✓
+
+BUSINESS
+118 000 F
+50
+3
+✓
+10
+50
+✓
+Illimité
+✓
+✓
+
+Note de bas de slide :
+Découverte : 5 annonces offertes pendant 1 mois pour découvrir la plateforme, puis elles expirent.
+1 bien en vedette = 1 mise en avant pendant 7 jours. Crédits inclus = nombre d'annonces actives du pack.
+
+Bandeau bas de slide :
+Plus de visibilité pour vos biens
+Des prospects qualifiés et sérieux
+Un accompagnement de proximité
+Un écosystème complet pour réussir ensemble
+12

@@ -1,0 +1,77 @@
+{
+  "screen": "56_public_property_mobile_390x844",
+  "file": "48_public_property_mobile_390x844.png",
+  "url": "http://kayloo.local:8000/bien/sn-location-appartement-f3-lumineux-aux-almadies-dakar-4cfd16ceacaf",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "device_scale_factor": 2,
+  "full_page": false,
+  "scroll": {
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 3626
+  },
+  "elements": [
+    {
+      "label": "Menu",
+      "type": "button",
+      "x": 674,
+      "y": 8,
+      "width": 74,
+      "height": 96,
+      "tap": false
+    },
+    {
+      "label": "5 Photo(s)",
+      "type": "link",
+      "x": 504,
+      "y": 1152,
+      "width": 244,
+      "height": 72,
+      "tap": false
+    },
+    {
+      "label": "Ajouter aux favoris",
+      "type": "button",
+      "x": 309,
+      "y": 1588,
+      "width": 64,
+      "height": 64,
+      "tap": false
+    },
+    {
+      "label": "Partager",
+      "type": "button",
+      "x": 397,
+      "y": 1588,
+      "width": 64,
+      "height": 64,
+      "tap": false
+    },
+    {
+      "label": "Contacter",
+      "type": "link",
+      "x": 485,
+      "y": 1576,
+      "width": 263,
+      "height": 88,
+      "tap": false
+    },
+    {
+      "label": "KIA · Assistant Kayloo",
+      "type": "button",
+      "x": 636,
+      "y": 1408,
+      "width": 112,
+      "height": 112,
+      "tap": false
+    }
+  ],
+  "image": {
+    "width": 780,
+    "height": 1688
+  }
+}

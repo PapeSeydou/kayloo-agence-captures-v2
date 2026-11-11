@@ -1,0 +1,296 @@
+{
+  "screen": "26_form_period_selected",
+  "file": "20_form_period_selected.png",
+  "url": "http://kayloo.local:8000/admin/property/create",
+  "viewport": {
+    "width": 1440,
+    "height": 810
+  },
+  "device_scale_factor": 2,
+  "full_page": false,
+  "scroll": {
+    "x": 0,
+    "y": 366,
+    "w": 1440,
+    "h": 1176
+  },
+  "elements": [
+    {
+      "label": "Vue d'ensemble",
+      "type": "link",
+      "x": 16,
+      "y": 152,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Biens",
+      "type": "link",
+      "x": 16,
+      "y": 236,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Annonces",
+      "type": "link",
+      "x": 0,
+      "y": 318,
+      "width": 478,
+      "height": 72,
+      "tap": false
+    },
+    {
+      "label": "Nouvelle annonce",
+      "type": "link",
+      "x": 0,
+      "y": 390,
+      "width": 478,
+      "height": 72,
+      "tap": false
+    },
+    {
+      "label": "Favoris",
+      "type": "link",
+      "x": 0,
+      "y": 462,
+      "width": 478,
+      "height": 72,
+      "tap": false
+    },
+    {
+      "label": "CRM",
+      "type": "link",
+      "x": 16,
+      "y": 536,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Boutique crédits",
+      "type": "link",
+      "x": 16,
+      "y": 620,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Mon équipe",
+      "type": "link",
+      "x": 16,
+      "y": 704,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Compte",
+      "type": "link",
+      "x": 16,
+      "y": 788,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Nouveau bien TYPE D'ANNONCE Vente Mettre en vente un bien immobilier Location Louer un ...",
+      "type": "card",
+      "x": 496,
+      "y": 0,
+      "width": 2368,
+      "height": 1620,
+      "tap": false,
+      "clipped": true
+    },
+    {
+      "label": "Nouveau bien TYPE D'ANNONCE Vente Mettre en vente un bien immobilier Location Louer un ...",
+      "type": "card",
+      "x": 528,
+      "y": 0,
+      "width": 2304,
+      "height": 1620,
+      "tap": false,
+      "clipped": true
+    },
+    {
+      "label": "TYPE D'ANNONCE Vente Mettre en vente un bien immobilier Location Louer un bien (vide ou...",
+      "type": "card",
+      "x": 530,
+      "y": 0,
+      "width": 2300,
+      "height": 1620,
+      "tap": false,
+      "clipped": true
+    },
+    {
+      "label": "Location vide",
+      "type": "button",
+      "x": 620,
+      "y": 100,
+      "width": 1050,
+      "height": 75,
+      "tap": false
+    },
+    {
+      "label": "Location meublée",
+      "type": "button",
+      "x": 1690,
+      "y": 100,
+      "width": 1050,
+      "height": 75,
+      "tap": false
+    },
+    {
+      "label": "1 Identification",
+      "type": "button",
+      "x": 572,
+      "y": 335,
+      "width": 290,
+      "height": 92,
+      "tap": false
+    },
+    {
+      "label": "2 Localisation",
+      "type": "button",
+      "x": 862,
+      "y": 335,
+      "width": 275,
+      "height": 92,
+      "tap": false
+    },
+    {
+      "label": "3 Caractéristiques",
+      "type": "button",
+      "x": 1137,
+      "y": 335,
+      "width": 331,
+      "height": 92,
+      "tap": false
+    },
+    {
+      "label": "4 Photos & Description",
+      "type": "button",
+      "x": 1468,
+      "y": 335,
+      "width": 385,
+      "height": 92,
+      "tap": false
+    },
+    {
+      "label": "5 Prix",
+      "type": "button",
+      "x": 1853,
+      "y": 335,
+      "width": 174,
+      "height": 92,
+      "tap": false
+    },
+    {
+      "label": "6 Options",
+      "type": "button",
+      "x": 2028,
+      "y": 335,
+      "width": 223,
+      "height": 92,
+      "tap": false
+    },
+    {
+      "label": "Label",
+      "type": "link",
+      "x": 612,
+      "y": 541,
+      "width": 1413,
+      "height": 37,
+      "tap": false
+    },
+    {
+      "label": "Appartement F3 lumineux aux Almadies",
+      "type": "input",
+      "x": 612,
+      "y": 584,
+      "width": 1413,
+      "height": 63,
+      "tap": false
+    },
+    {
+      "label": "Type",
+      "type": "link",
+      "x": 2057,
+      "y": 541,
+      "width": 691,
+      "height": 37,
+      "tap": false
+    },
+    {
+      "label": "Remove all items",
+      "type": "button",
+      "x": 2331,
+      "y": 586,
+      "width": 31,
+      "height": 52,
+      "tap": false
+    },
+    {
+      "label": "Usage",
+      "type": "link",
+      "x": 612,
+      "y": 696,
+      "width": 1052,
+      "height": 37,
+      "tap": false
+    },
+    {
+      "label": "Remove all items",
+      "type": "button",
+      "x": 815,
+      "y": 742,
+      "width": 31,
+      "height": 52,
+      "tap": false
+    },
+    {
+      "label": "Immeuble",
+      "type": "link",
+      "x": 612,
+      "y": 954,
+      "width": 1052,
+      "height": 37,
+      "tap": false
+    },
+    {
+      "label": "Période de location",
+      "type": "link",
+      "x": 612,
+      "y": 1212,
+      "width": 1052,
+      "height": 37,
+      "tap": false
+    },
+    {
+      "label": "Remove all items",
+      "type": "button",
+      "x": 783,
+      "y": 1258,
+      "width": 31,
+      "height": 52,
+      "tap": false
+    },
+    {
+      "label": "Suivant",
+      "type": "button",
+      "x": 612,
+      "y": 1438,
+      "width": 209,
+      "height": 72,
+      "tap": false
+    }
+  ],
+  "image": {
+    "width": 2880,
+    "height": 1620
+  }
+}

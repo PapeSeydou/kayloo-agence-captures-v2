@@ -1,0 +1,7 @@
+Votre agence est en attente de validation
+Soumettez vos documents d'identification pour que notre équipe puisse activer votre agence.
+Soumettre les documents
+Plus tard
+
+Bandeau et modale affichés à la première ouverture de /admin/dashboard pour une agence non validée.
+Texte exact relevé le 2026-11-11 (capture 01 et 02).

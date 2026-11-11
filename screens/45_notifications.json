@@ -1,0 +1,167 @@
+{
+  "screen": "52_notifications",
+  "file": "45_notifications.png",
+  "url": "http://kayloo.local:8000/admin/mes-notifications",
+  "viewport": {
+    "width": 1440,
+    "height": 810
+  },
+  "device_scale_factor": 2,
+  "full_page": false,
+  "scroll": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 868
+  },
+  "elements": [
+    {
+      "label": "Vue d'ensemble",
+      "type": "link",
+      "x": 16,
+      "y": 152,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Biens",
+      "type": "link",
+      "x": 16,
+      "y": 236,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "CRM",
+      "type": "link",
+      "x": 16,
+      "y": 320,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Boutique crédits",
+      "type": "link",
+      "x": 16,
+      "y": 404,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Mon équipe",
+      "type": "link",
+      "x": 16,
+      "y": 488,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Compte",
+      "type": "link",
+      "x": 16,
+      "y": 572,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Mon profil",
+      "type": "link",
+      "x": 0,
+      "y": 654,
+      "width": 478,
+      "height": 72,
+      "tap": false
+    },
+    {
+      "label": "Mes notifications",
+      "type": "link",
+      "x": 0,
+      "y": 726,
+      "width": 478,
+      "height": 72,
+      "tap": false
+    },
+    {
+      "label": "Déconnexion",
+      "type": "link",
+      "x": 0,
+      "y": 798,
+      "width": 478,
+      "height": 72,
+      "tap": false
+    },
+    {
+      "label": "Voir le site Kayloo",
+      "type": "link",
+      "x": 1993,
+      "y": 8,
+      "width": 315,
+      "height": 96,
+      "tap": false
+    },
+    {
+      "label": "Français",
+      "type": "button",
+      "x": 2324,
+      "y": 20,
+      "width": 254,
+      "height": 72,
+      "tap": false
+    },
+    {
+      "label": "Menu utilisateur",
+      "type": "link",
+      "x": 2626,
+      "y": 16,
+      "width": 206,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Mes notifications 1 Tout marquer comme lu Annonce publiée — Appartement F3 lumineux aux...",
+      "type": "card",
+      "x": 496,
+      "y": 196,
+      "width": 2368,
+      "height": 421,
+      "tap": false
+    },
+    {
+      "label": "Tout marquer comme lu",
+      "type": "button",
+      "x": 2511,
+      "y": 285,
+      "width": 321,
+      "height": 40,
+      "tap": false
+    },
+    {
+      "label": "Annonce publiée — Appartement F3 lumineux aux Almadies L'annonce « Appartement F3 lumin...",
+      "type": "card",
+      "x": 528,
+      "y": 364,
+      "width": 2304,
+      "height": 205,
+      "tap": false
+    },
+    {
+      "label": "Marquer comme lu",
+      "type": "button",
+      "x": 2741,
+      "y": 404,
+      "width": 41,
+      "height": 32,
+      "tap": false
+    }
+  ],
+  "image": {
+    "width": 2880,
+    "height": 1620
+  }
+}

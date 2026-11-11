@@ -1,0 +1,35 @@
+Vue d'ensemble
+Biens
+CRM
+Boutique crédits
+Mon équipe
+Compte
+Mon profil
+Mes notifications
+Déconnexion
+Voir le site Kayloo
+Français
+Awa Diop
+Paramètres du compte
+
+COMPTE
+
+Mon profil
+Réseaux sociaux
+Mon agence
+Validation
+
+SÉCURITÉ
+
+Mot de passe
+Supprimer mon compte
+Validation de compte
+
+Vérifiez votre identité pour établir la confiance avec vos clients potentiels
+
+Mon Profil
+Statut
+Historique
+Statut de votre vérification
+VÉRIFIÉ
+Votre agence est active et vérifiée. Vous pouvez publier des annonces.

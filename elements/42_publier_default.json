@@ -1,0 +1,13 @@
+{
+  "screen": "42_publier_default",
+  "element": {
+    "label": "Créer l'annonce",
+    "type": "button",
+    "x": 28,
+    "y": 28,
+    "width": 322,
+    "height": 72,
+    "tap": true
+  },
+  "note": "Crop 2x de l'element (marge 14 px CSS), coordonnees dans l'image du crop."
+}

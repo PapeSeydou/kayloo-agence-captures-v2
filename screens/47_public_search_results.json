@@ -1,0 +1,257 @@
+{
+  "screen": "54_public_search_results",
+  "file": "47_public_search_results.png",
+  "url": "http://kayloo.local:8000/resultats?country=SN",
+  "viewport": {
+    "width": 1440,
+    "height": 810
+  },
+  "device_scale_factor": 2,
+  "full_page": false,
+  "scroll": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 1136
+  },
+  "elements": [
+    {
+      "label": "Accueil",
+      "type": "link",
+      "x": 304,
+      "y": 258,
+      "width": 163,
+      "height": 112,
+      "tap": false
+    },
+    {
+      "label": "Louer",
+      "type": "link",
+      "x": 469,
+      "y": 258,
+      "width": 174,
+      "height": 112,
+      "tap": false
+    },
+    {
+      "label": "Acheter",
+      "type": "link",
+      "x": 645,
+      "y": 258,
+      "width": 204,
+      "height": 112,
+      "tap": false
+    },
+    {
+      "label": "Construire",
+      "type": "link",
+      "x": 851,
+      "y": 258,
+      "width": 205,
+      "height": 112,
+      "tap": false
+    },
+    {
+      "label": "Investisseurs",
+      "type": "link",
+      "x": 1058,
+      "y": 258,
+      "width": 237,
+      "height": 112,
+      "tap": false
+    },
+    {
+      "label": "Nos Partenaires",
+      "type": "link",
+      "x": 1298,
+      "y": 258,
+      "width": 307,
+      "height": 112,
+      "tap": false
+    },
+    {
+      "label": "Publicité",
+      "type": "link",
+      "x": 1607,
+      "y": 258,
+      "width": 214,
+      "height": 112,
+      "tap": false
+    },
+    {
+      "label": "Nouvelle annonce",
+      "type": "link",
+      "x": 2035,
+      "y": 283,
+      "width": 301,
+      "height": 62,
+      "tap": false
+    },
+    {
+      "label": "Changer de langue",
+      "type": "button",
+      "x": 2448,
+      "y": 290,
+      "width": 130,
+      "height": 48,
+      "tap": false
+    },
+    {
+      "label": "Voir l'annonce →",
+      "type": "link",
+      "x": 580,
+      "y": 925,
+      "width": 205,
+      "height": 44,
+      "tap": false
+    },
+    {
+      "label": "Zoom in",
+      "type": "button",
+      "x": 20,
+      "y": 392,
+      "width": 58,
+      "height": 58,
+      "tap": false
+    },
+    {
+      "label": "Zoom out",
+      "type": "button",
+      "x": 20,
+      "y": 450,
+      "width": 58,
+      "height": 58,
+      "tap": false
+    },
+    {
+      "label": "Enter fullscreen",
+      "type": "button",
+      "x": 1522,
+      "y": 392,
+      "width": 58,
+      "height": 58,
+      "tap": false
+    },
+    {
+      "label": "Filtrer",
+      "type": "button",
+      "x": 1393,
+      "y": 1592,
+      "width": 183,
+      "height": 28,
+      "tap": false
+    },
+    {
+      "label": "Dessiner",
+      "type": "button",
+      "x": 24,
+      "y": 1576,
+      "width": 88,
+      "height": 44,
+      "tap": false
+    },
+    {
+      "label": "Lieux/Transports",
+      "type": "button",
+      "x": 124,
+      "y": 1576,
+      "width": 88,
+      "height": 44,
+      "tap": false
+    },
+    {
+      "label": "Temps de trajet",
+      "type": "button",
+      "x": 224,
+      "y": 1576,
+      "width": 88,
+      "height": 44,
+      "tap": false
+    },
+    {
+      "label": "Explorer",
+      "type": "button",
+      "x": 324,
+      "y": 1576,
+      "width": 88,
+      "height": 44,
+      "tap": false
+    },
+    {
+      "label": "Me localiser",
+      "type": "button",
+      "x": 424,
+      "y": 1576,
+      "width": 88,
+      "height": 44,
+      "tap": false
+    },
+    {
+      "label": "Filtrer",
+      "type": "button",
+      "x": 2286,
+      "y": 414,
+      "width": 188,
+      "height": 72,
+      "tap": false
+    },
+    {
+      "label": "Liste",
+      "type": "button",
+      "x": 2492,
+      "y": 414,
+      "width": 161,
+      "height": 72,
+      "tap": false
+    },
+    {
+      "label": "Carte",
+      "type": "button",
+      "x": 2653,
+      "y": 414,
+      "width": 177,
+      "height": 72,
+      "tap": false
+    },
+    {
+      "label": "À Louer Vérifié 48h 450 000 XOF",
+      "type": "link",
+      "x": 1648,
+      "y": 827,
+      "width": 580,
+      "height": 256,
+      "tap": false
+    },
+    {
+      "label": "Ajouter aux favoris",
+      "type": "button",
+      "x": 2156,
+      "y": 843,
+      "width": 56,
+      "height": 56,
+      "tap": false
+    },
+    {
+      "label": "Appartement F3 lumineux aux Almadies",
+      "type": "link",
+      "x": 1672,
+      "y": 1099,
+      "width": 532,
+      "height": 43,
+      "tap": false
+    },
+    {
+      "label": "KIA · Assistant Kayloo",
+      "type": "button",
+      "x": 2720,
+      "y": 1316,
+      "width": 112,
+      "height": 112,
+      "tap": false
+    }
+  ],
+  "image": {
+    "width": 2880,
+    "height": 1620
+  }
+}

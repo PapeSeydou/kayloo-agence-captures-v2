@@ -1,0 +1,29 @@
+Vue d'ensemble
+Biens
+Annonces
+Nouvelle annonce
+Favoris
+CRM
+Boutique crédits
+Mon équipe
+Compte
+Voir le site Kayloo
+Français
+Awa Diop
+Annonces
+Administration
+Annonces
+ Export
+ Afficher/Cacher des colonnes
+ Recherche avancée
+Nouveau bien
+Afficher 10 lignes
+	INTITULÉ	STATUT	PUBLIÉ	TYPE	VILLE	SURFACE (M²)	PRIX	
+	Appartement F3 lumineux aux Almadies	À louer	
+	Appartement F3	Dakar	95	450 000 XOF	
+Affichage de 1 à 1 sur 1 entrées
+Première
+Précédente
+1
+Suivante
+Dernière

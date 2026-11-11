@@ -1,0 +1,515 @@
+import functools
+import logging
+from typing import Awaitable, Callable
+
+from sqlalchemy import text
+from sqlalchemy.ext.asyncio import AsyncSession
+from starlette.requests import Request
+
+from core import cluster_events
+
+_log = logging.getLogger(__name__)
+
+# Les listes ci-dessous vivent en mémoire de chaque process. Un refresh_*()
+# appelé après une modification est diffusé aux autres instances (événement
+# "admin_choices"), qui rejouent le même refresh avec leur propre session.
+_CHOICES_EVENT = "admin_choices"
+_broadcast_refreshers: dict[str, Callable[[AsyncSession], Awaitable[None]]] = {}
+
+
+def _broadcast(fn: Callable[[AsyncSession], Awaitable[None]]) -> Callable[[AsyncSession], Awaitable[None]]:
+    _broadcast_refreshers[fn.__name__] = fn
+
+    @functools.wraps(fn)
+    async def wrapper(session: AsyncSession) -> None:
+        await fn(session)
+        await cluster_events.publish(_CHOICES_EVENT, fn.__name__)
+
+    return wrapper
+
+
+async def _on_peer_refresh(name: str) -> None:
+    fn = _broadcast_refreshers.get(name)
+    if fn is None:
+        return
+    from core.db import async_session_maker
+
+    async with async_session_maker() as session:
+        await fn(session)
+
+
+async def _on_resync() -> None:
+    from core.db import async_session_maker
+
+    async with async_session_maker() as session:
+        await warm_choices_cache(session)
+
+
+cluster_events.on(_CHOICES_EVENT, _on_peer_refresh)
+cluster_events.on_reconnect(_on_resync)
+
+
+_country_choices: list[tuple[str, str]] = []
+_city_choices: list[tuple[str, str]] = []
+_zone_choices: list[tuple[str, str]] = []
+_user_choices: list[tuple[str, str]] = []
+_agency_choices: list[tuple[str, str]] = []
+_agent_choices: list[tuple[str, str]] = []
+_property_type_choices: list[tuple[str, str]] = []
+_property_rent_type_choices: list[tuple[str, str]] = []
+_city_id_choices: list[tuple[str, str]] = []
+_area_id_choices: list[tuple[str, str]] = []
+_building_choices: list[tuple[str, str]] = []
+_property_choices: list[tuple[str, str]] = []
+_article_choices: list[tuple[str, str]] = []
+_commodity_choices: list[tuple[str, str]] = []
+_contact_choices: list[tuple[str, str]] = []
+_artisan_service_choices: list[tuple[str, str]] = []
+_artisan_service_name_choices: list[tuple[str, str]] = []  # catégories actives (spécialité, service)
+_artisan_triage_question_choices: list[tuple[str, str]] = []
+_kayloo_plan_choices: list[tuple[str, str]] = []
+_immoneuf_plan_choices: list[tuple[str, str]] = []
+
+# Cascade maps for dynamic form filtering
+_cities_by_country: dict[str, list[dict]] = {}  # country_code → [{id, name}]
+_areas_by_city: dict[str, list[dict]] = {}       # city_uuid → [{id, name}]
+_user_roles_map: dict[str, str] = {}             # user_id → role (for conditional form fields)
+
+
+# Catégories du catalogue artisan, gérées dans l'admin (table artisan_category).
+_ARTISAN_CATEGORY_SQL = (
+    "SELECT slug, label FROM artisan_category WHERE is_active = true ORDER BY position, label"
+)
+
+
+async def warm_choices_cache(session: AsyncSession) -> None:
+    global _country_choices, _city_choices, _zone_choices, _user_choices, _agency_choices
+    global _agent_choices
+    global _property_type_choices, _property_rent_type_choices
+    global _city_id_choices, _area_id_choices, _building_choices, _property_choices, _article_choices
+    global _commodity_choices
+    global _contact_choices, _artisan_service_choices, _artisan_service_name_choices, _artisan_triage_question_choices
+    global _kayloo_plan_choices, _immoneuf_plan_choices
+    global _cities_by_country, _areas_by_city, _user_roles_map
+    _log.info("warm_choices_cache: starting...")
+
+    async def fetch(sql: str) -> list:
+        return (await session.execute(text(sql))).fetchall()
+
+    _country_choices = [
+        (r[0], f"{r[1]} ({r[0]})")
+        for r in await fetch(
+            "SELECT code, name FROM country WHERE is_active = true ORDER BY name"
+        )
+    ]
+
+    _city_choices = [
+        (r[0], f"{r[1]} ({r[0]})")
+        for r in await fetch(
+            "SELECT code, name FROM city WHERE is_active = true ORDER BY name"
+        )
+    ]
+
+    _zone_choices = [
+        (r[0], f"{r[1]} ({r[2]})")
+        for r in await fetch(
+            "SELECT area.name, area.name, city.name "
+            "FROM area JOIN city ON city.code = area.city "
+            "WHERE area.is_active = true ORDER BY city.name, area.name"
+        )
+    ]
+
+    _user_choices = [
+        (r[0], r[1])
+        for r in await fetch(
+            "SELECT id::text, first_name || ' ' || last_name || ' (' || email || ')' "
+            "FROM \"user\" WHERE is_active = true ORDER BY first_name"
+        )
+    ]
+
+    _agency_choices = [
+        (r[0], r[1])
+        for r in await fetch(
+            "SELECT id::text, "
+            "  COALESCE(NULLIF(name,''), '[Sans nom]') || ' (' || country || ')'"
+            "  || CASE WHEN is_active = false THEN ' — En attente' ELSE '' END "
+            "FROM agency ORDER BY is_active DESC, name"
+        )
+    ]
+    _log.info("warm_choices_cache: %d agencies loaded", len(_agency_choices))
+
+    _kayloo_plan_choices = [
+        (r[0], r[1])
+        for r in await fetch(
+            "SELECT id::text, name || ' — ' || price || ' FCFA' FROM subscription_plan "
+            "WHERE portal = 'kayloo' ORDER BY sort_order"
+        )
+    ]
+    _immoneuf_plan_choices = [
+        (r[0], r[1])
+        for r in await fetch(
+            "SELECT id::text, name || ' — ' || price || ' FCFA' FROM subscription_plan "
+            "WHERE portal = 'immoneuf' ORDER BY sort_order"
+        )
+    ]
+
+    _agent_choices = [
+        (r[0], r[1])
+        for r in await fetch(
+            "SELECT agent.id::text, "
+            "u.first_name || ' ' || u.last_name || ' — ' || agency.name "
+            "FROM agent "
+            "JOIN \"user\" u ON u.id = agent.user_id "
+            "JOIN agency ON agency.id = agent.agency_id "
+            "ORDER BY u.first_name"
+        )
+    ]
+
+    _property_type_choices = [
+        (r[0], r[1])
+        for r in await fetch(
+            "SELECT code, label FROM property_type WHERE is_active = true ORDER BY label"
+        )
+    ]
+
+    _property_rent_type_choices = [
+        (r[0], r[1])
+        for r in await fetch(
+            "SELECT code, label FROM property_rent_type WHERE is_active = true ORDER BY label"
+        )
+    ]
+
+    _city_id_choices = [
+        (str(r[0]), f"{r[1]} ({r[2]})")
+        for r in await fetch(
+            "SELECT id::text, name, code "
+            "FROM city WHERE is_active = true ORDER BY name"
+        )
+    ]
+
+    _area_id_choices = [
+        (str(r[0]), f"{r[1]} ({r[2]})")
+        for r in await fetch(
+            "SELECT area.id::text, area.name, city.name "
+            "FROM area JOIN city ON city.code = area.city "
+            "WHERE area.is_active = true ORDER BY city.name, area.name"
+        )
+    ]
+
+    # Cascade maps
+    _cities_by_country = {}
+    for r in await fetch(
+        "SELECT id::text, name, country FROM city WHERE is_active = true ORDER BY name"
+    ):
+        bucket = _cities_by_country.setdefault(r[2], [])
+        bucket.append({"id": str(r[0]), "name": r[1]})
+
+    _areas_by_city = {}
+    for r in await fetch(
+        "SELECT area.id::text, area.name, city.id::text "
+        "FROM area JOIN city ON city.code = area.city "
+        "WHERE area.is_active = true ORDER BY area.name"
+    ):
+        bucket = _areas_by_city.setdefault(str(r[2]), [])
+        bucket.append({"id": str(r[0]), "name": r[1]})
+
+    _building_choices = [
+        (r[0], r[1])
+        for r in await fetch(
+            "SELECT id::text, name FROM building ORDER BY name"
+        )
+    ]
+
+    _property_choices = [
+        (r[0], r[1])
+        for r in await fetch(
+            "SELECT id::text, COALESCE(label, code, id::text) "
+            "FROM property_property ORDER BY label"
+        )
+    ]
+
+    _article_choices = [
+        (r[0], r[1])
+        for r in await fetch(
+            "SELECT id::text, title FROM article ORDER BY title"
+        )
+    ]
+
+    _commodity_choices = [
+        (r[0], r[1])
+        for r in await fetch(
+            "SELECT slug, name FROM immo_commodity ORDER BY display_order, name"
+        )
+    ]
+
+    _contact_choices = [
+        (r[0], r[1])
+        for r in await fetch(
+            "SELECT id::text, first_name || ' ' || last_name || "
+            "  COALESCE(' (' || email || ')', '') "
+            "FROM contact ORDER BY last_name, first_name"
+        )
+    ]
+
+    _artisan_service_choices = [
+        (r[0], r[1])
+        for r in await fetch(
+            "SELECT id::text, name FROM artisan_service ORDER BY name"
+        )
+    ]
+
+    _artisan_service_name_choices = [("", "— Sélectionner —")] + [
+        (r[0], r[1]) for r in await fetch(_ARTISAN_CATEGORY_SQL)
+    ]
+
+    _artisan_triage_question_choices = [
+        (r[0], r[1])
+        for r in await fetch(
+            "SELECT aq.id::text, "
+            "  's.' || COALESCE(aser.name, '?') || ' › Q' || aq.question_order::text || ' — ' || LEFT(aq.question_text, 50) "
+            "FROM artisan_triage_question aq "
+            "LEFT JOIN artisan_service aser ON aser.id = aq.service_id "
+            "ORDER BY aser.name, aq.question_order"
+        )
+    ]
+
+    # Build user roles map for conditional form fields
+    _user_roles_map = {}
+    for r in await fetch(
+        "SELECT id::text, role FROM \"user\" WHERE is_active = true"
+    ):
+        _user_roles_map[r[0]] = r[1]
+
+
+def load_country_choices(request: Request) -> list[tuple[str, str]]:
+    return _country_choices
+
+
+def load_city_choices(request: Request) -> list[tuple[str, str]]:
+    return _city_choices
+
+
+def load_zone_choices(request: Request) -> list[tuple[str, str]]:
+    return _zone_choices
+
+
+def load_user_choices(request: Request) -> list[tuple[str, str]]:
+    return _user_choices
+
+
+def load_agency_choices(request: Request) -> list[tuple[str, str]]:
+    return _agency_choices
+
+
+def load_kayloo_plan_choices(request: Request) -> list[tuple[str, str]]:
+    return _kayloo_plan_choices
+
+
+def load_immoneuf_plan_choices(request: Request) -> list[tuple[str, str]]:
+    return _immoneuf_plan_choices
+
+
+def load_all_plan_choices(request: Request) -> list[tuple[str, str]]:
+    return _kayloo_plan_choices + _immoneuf_plan_choices
+
+
+@_broadcast
+async def refresh_city_choices(session: AsyncSession) -> None:
+    """Recharge les caches liés aux villes — appelé après création/modification."""
+    global _city_choices, _city_id_choices, _cities_by_country
+
+    async def fetch(sql: str) -> list:
+        return (await session.execute(text(sql))).fetchall()
+
+    _city_choices = [
+        (r[0], f"{r[1]} ({r[0]})")
+        for r in await fetch(
+            "SELECT code, name FROM city WHERE is_active = true ORDER BY name"
+        )
+    ]
+
+    _city_id_choices = [
+        (str(r[0]), f"{r[1]} ({r[2]})")
+        for r in await fetch(
+            "SELECT id::text, name, code "
+            "FROM city WHERE is_active = true ORDER BY name"
+        )
+    ]
+
+    _cities_by_country = {}
+    for r in await fetch(
+        "SELECT id::text, name, country FROM city WHERE is_active = true ORDER BY name"
+    ):
+        bucket = _cities_by_country.setdefault(r[2], [])
+        bucket.append({"id": str(r[0]), "name": r[1]})
+
+
+@_broadcast
+async def refresh_agency_choices(session: AsyncSession) -> None:
+    """Recharge uniquement le cache des agences — appelé après création/modification."""
+    global _agency_choices
+    result = await session.execute(text(
+        "SELECT id::text, "
+        "  COALESCE(NULLIF(name,''), '[Sans nom]') || ' (' || country || ')'"
+        "  || CASE WHEN is_active = false THEN ' — En attente' ELSE '' END "
+        "FROM agency ORDER BY is_active DESC, name"
+    ))
+    _agency_choices = [(r[0], r[1]) for r in result.fetchall()]
+
+
+@_broadcast
+async def refresh_subscription_plan_choices(session: AsyncSession) -> None:
+    """Recharge uniquement le cache des paliers d'abonnement — appelé après création/modification."""
+    global _kayloo_plan_choices, _immoneuf_plan_choices
+    _kayloo_plan_choices = [
+        (r[0], r[1]) for r in (await session.execute(text(
+            "SELECT id::text, name || ' — ' || price || ' FCFA' FROM subscription_plan "
+            "WHERE portal = 'kayloo' ORDER BY sort_order"
+        ))).fetchall()
+    ]
+    _immoneuf_plan_choices = [
+        (r[0], r[1]) for r in (await session.execute(text(
+            "SELECT id::text, name || ' — ' || price || ' FCFA' FROM subscription_plan "
+            "WHERE portal = 'immoneuf' ORDER BY sort_order"
+        ))).fetchall()
+    ]
+
+
+@_broadcast
+async def refresh_user_choices(session: AsyncSession) -> None:
+    global _user_choices
+    result = await session.execute(text(
+        "SELECT id::text, first_name || ' ' || last_name || ' (' || email || ')' "
+        "FROM \"user\" WHERE is_active = true ORDER BY first_name"
+    ))
+    _user_choices = [(r[0], r[1]) for r in result.fetchall()]
+
+
+@_broadcast
+async def refresh_property_choices(session: AsyncSession) -> None:
+    global _property_choices
+    result = await session.execute(text(
+        "SELECT id::text, COALESCE(label, code, id::text) FROM property_property ORDER BY label"
+    ))
+    _property_choices = [(r[0], r[1]) for r in result.fetchall()]
+
+
+@_broadcast
+async def refresh_contact_choices(session: AsyncSession) -> None:
+    global _contact_choices
+    result = await session.execute(text(
+        "SELECT id::text, first_name || ' ' || last_name || "
+        "  COALESCE(' (' || email || ')', '') "
+        "FROM contact ORDER BY last_name, first_name"
+    ))
+    _contact_choices = [(r[0], r[1]) for r in result.fetchall()]
+
+
+@_broadcast
+async def refresh_artisan_service_choices(session: AsyncSession) -> None:
+    global _artisan_service_choices, _artisan_service_name_choices
+    result = await session.execute(text(
+        "SELECT id::text, name FROM artisan_service ORDER BY name"
+    ))
+    _artisan_service_choices = [(r[0], r[1]) for r in result.fetchall()]
+    await refresh_artisan_category_choices(session)
+
+
+@_broadcast
+async def refresh_artisan_category_choices(session: AsyncSession) -> None:
+    global _artisan_service_name_choices
+    rows = (await session.execute(text(_ARTISAN_CATEGORY_SQL))).fetchall()
+    _artisan_service_name_choices = [("", "— Sélectionner —")] + [(r[0], r[1]) for r in rows]
+
+
+@_broadcast
+async def refresh_commodity_choices(session: AsyncSession) -> None:
+    global _commodity_choices
+    result = await session.execute(text(
+        "SELECT slug, name FROM immo_commodity ORDER BY display_order, name"
+    ))
+    _commodity_choices = [(r[0], r[1]) for r in result.fetchall()]
+
+
+def load_agent_choices(request: Request) -> list[tuple[str, str]]:
+    return _agent_choices
+
+
+def load_property_type_choices(request: Request) -> list[tuple[str, str]]:
+    return _property_type_choices
+
+
+def load_commodity_choices(request: Request) -> list[tuple[str, str]]:
+    return _commodity_choices
+
+
+def load_property_rent_type_choices(request: Request) -> list[tuple[str, str]]:
+    return _property_rent_type_choices
+
+
+def load_city_id_choices(request: Request) -> list[tuple[str, str]]:
+    return _city_id_choices
+
+
+def load_area_id_choices(request: Request) -> list[tuple[str, str]]:
+    return _area_id_choices
+
+
+def load_building_choices(request: Request) -> list[tuple[str, str]]:
+    return _building_choices
+
+
+def load_property_choices(request: Request) -> list[tuple[str, str]]:
+    return _property_choices
+
+
+def load_article_choices(request: Request) -> list[tuple[str, str]]:
+    return _article_choices
+
+
+def load_active_country_choices(request: Request) -> list[tuple[str, str]]:
+    """Retourne les pays depuis le cache (chargé au démarrage)"""
+    if not _country_choices:
+        print("WARNING: _country_choices is empty! Cache not warmed up.")
+    return _country_choices
+
+
+def load_active_city_choices(request: Request) -> list[tuple[str, str]]:
+    """Retourne les villes depuis le cache (chargé au démarrage)"""
+    if not _city_choices:
+        print("WARNING: _city_choices is empty! Cache not warmed up.")
+    return _city_choices
+
+
+def get_cities_by_country(country_code: str) -> list[dict]:
+    return _cities_by_country.get(country_code, [])
+
+
+def get_areas_by_city(city_id: str) -> list[dict]:
+    return _areas_by_city.get(city_id, [])
+
+
+def get_user_roles_map(request: Request) -> dict[str, str]:
+    """Retourne le map user_id -> role pour les champs de formulaire conditionnels"""
+    return _user_roles_map
+
+
+def load_contact_choices(request: Request) -> list[tuple[str, str]]:
+    return _contact_choices
+
+
+def load_artisan_service_choices(request: Request) -> list[tuple[str, str]]:
+    return _artisan_service_choices
+
+
+def load_artisan_service_name_choices(request: Request) -> list[tuple[str, str]]:
+    return _artisan_service_name_choices
+
+
+def load_artisan_category_choices(request: Request) -> list[tuple[str, str]]:
+    """Catégories actives, sans l'option vide (champ obligatoire)."""
+    return [c for c in _artisan_service_name_choices if c[0]]
+
+
+def load_artisan_triage_question_choices(request: Request) -> list[tuple[str, str]]:
+    return _artisan_triage_question_choices

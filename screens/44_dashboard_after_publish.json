@@ -1,0 +1,284 @@
+{
+  "screen": "51_dashboard_after_publish",
+  "file": "44_dashboard_after_publish.png",
+  "url": "http://kayloo.local:8000/admin/dashboard",
+  "viewport": {
+    "width": 1440,
+    "height": 810
+  },
+  "device_scale_factor": 2,
+  "full_page": false,
+  "scroll": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 868
+  },
+  "elements": [
+    {
+      "label": "Vue d'ensemble",
+      "type": "link",
+      "x": 16,
+      "y": 152,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Tableau de bord",
+      "type": "link",
+      "x": 0,
+      "y": 234,
+      "width": 478,
+      "height": 72,
+      "tap": false
+    },
+    {
+      "label": "Activités",
+      "type": "link",
+      "x": 0,
+      "y": 306,
+      "width": 478,
+      "height": 72,
+      "tap": false
+    },
+    {
+      "label": "Statistiques",
+      "type": "link",
+      "x": 0,
+      "y": 378,
+      "width": 478,
+      "height": 72,
+      "tap": false
+    },
+    {
+      "label": "Biens",
+      "type": "link",
+      "x": 16,
+      "y": 452,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "CRM",
+      "type": "link",
+      "x": 16,
+      "y": 536,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Boutique crédits",
+      "type": "link",
+      "x": 16,
+      "y": 620,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Mon équipe",
+      "type": "link",
+      "x": 16,
+      "y": 704,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Compte",
+      "type": "link",
+      "x": 16,
+      "y": 788,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Voir le site Kayloo",
+      "type": "link",
+      "x": 1993,
+      "y": 8,
+      "width": 315,
+      "height": 96,
+      "tap": false
+    },
+    {
+      "label": "Français",
+      "type": "button",
+      "x": 2324,
+      "y": 20,
+      "width": 254,
+      "height": 72,
+      "tap": false
+    },
+    {
+      "label": "Menu utilisateur",
+      "type": "link",
+      "x": 2626,
+      "y": 16,
+      "width": 206,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Bonjour, Awa Diop! Aperçu rapide de votre activité commerciale 11 nov. 2026 | 08h18 Nou...",
+      "type": "card",
+      "x": 496,
+      "y": 196,
+      "width": 2368,
+      "height": 984,
+      "tap": false
+    },
+    {
+      "label": "Bonjour, Awa Diop! Aperçu rapide de votre activité commerciale 11 nov. 2026 | 08h18 Nou...",
+      "type": "card",
+      "x": 562,
+      "y": 246,
+      "width": 2236,
+      "height": 226,
+      "tap": false
+    },
+    {
+      "label": "Nouvelle annonce",
+      "type": "link",
+      "x": 2021,
+      "y": 296,
+      "width": 300,
+      "height": 62,
+      "tap": false
+    },
+    {
+      "label": "Leads",
+      "type": "link",
+      "x": 2340,
+      "y": 296,
+      "width": 159,
+      "height": 62,
+      "tap": false
+    },
+    {
+      "label": "Statistiques",
+      "type": "link",
+      "x": 2518,
+      "y": 296,
+      "width": 225,
+      "height": 62,
+      "tap": false
+    },
+    {
+      "label": "Mes annonces 1 100%",
+      "type": "link",
+      "x": 562,
+      "y": 520,
+      "width": 535,
+      "height": 281,
+      "tap": false
+    },
+    {
+      "label": "Mes annonces 1 100%",
+      "type": "card",
+      "x": 564,
+      "y": 522,
+      "width": 531,
+      "height": 277,
+      "tap": false
+    },
+    {
+      "label": "Annonces publiées 1 100%",
+      "type": "link",
+      "x": 1129,
+      "y": 520,
+      "width": 535,
+      "height": 281,
+      "tap": false
+    },
+    {
+      "label": "Annonces publiées 1 100%",
+      "type": "card",
+      "x": 1131,
+      "y": 522,
+      "width": 531,
+      "height": 277,
+      "tap": false
+    },
+    {
+      "label": "Annonces en attente 0 0%",
+      "type": "link",
+      "x": 1696,
+      "y": 520,
+      "width": 535,
+      "height": 281,
+      "tap": false
+    },
+    {
+      "label": "Annonces en attente 0 0%",
+      "type": "card",
+      "x": 1698,
+      "y": 522,
+      "width": 531,
+      "height": 277,
+      "tap": false
+    },
+    {
+      "label": "Annonces expirées 0 0%",
+      "type": "link",
+      "x": 2263,
+      "y": 520,
+      "width": 535,
+      "height": 281,
+      "tap": false
+    },
+    {
+      "label": "Annonces expirées 0 0%",
+      "type": "card",
+      "x": 2265,
+      "y": 522,
+      "width": 531,
+      "height": 277,
+      "tap": false
+    },
+    {
+      "label": "Mes prospects 0 0%",
+      "type": "link",
+      "x": 562,
+      "y": 833,
+      "width": 1102,
+      "height": 281,
+      "tap": false
+    },
+    {
+      "label": "Mes prospects 0 0%",
+      "type": "card",
+      "x": 564,
+      "y": 835,
+      "width": 1098,
+      "height": 277,
+      "tap": false
+    },
+    {
+      "label": "Mes demandes 0 0%",
+      "type": "link",
+      "x": 1696,
+      "y": 833,
+      "width": 1102,
+      "height": 281,
+      "tap": false
+    },
+    {
+      "label": "Mes demandes 0 0%",
+      "type": "card",
+      "x": 1698,
+      "y": 835,
+      "width": 1098,
+      "height": 277,
+      "tap": false
+    }
+  ],
+  "image": {
+    "width": 2880,
+    "height": 1620
+  }
+}

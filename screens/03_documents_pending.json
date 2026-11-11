@@ -1,0 +1,275 @@
+{
+  "screen": "03_documents_pending",
+  "file": "03_documents_pending.png",
+  "url": "http://kayloo.local:8000/admin/profile?tab=validation",
+  "viewport": {
+    "width": 1440,
+    "height": 810
+  },
+  "device_scale_factor": 2,
+  "full_page": false,
+  "scroll": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 868
+  },
+  "elements": [
+    {
+      "label": "Vue d'ensemble",
+      "type": "link",
+      "x": 16,
+      "y": 152,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Biens",
+      "type": "link",
+      "x": 16,
+      "y": 236,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "CRM",
+      "type": "link",
+      "x": 16,
+      "y": 320,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Boutique crédits",
+      "type": "link",
+      "x": 16,
+      "y": 404,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Mon équipe",
+      "type": "link",
+      "x": 16,
+      "y": 488,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Compte",
+      "type": "link",
+      "x": 16,
+      "y": 572,
+      "width": 446,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Mon profil",
+      "type": "link",
+      "x": 0,
+      "y": 654,
+      "width": 478,
+      "height": 72,
+      "tap": false
+    },
+    {
+      "label": "Mes notifications",
+      "type": "link",
+      "x": 0,
+      "y": 726,
+      "width": 478,
+      "height": 72,
+      "tap": false
+    },
+    {
+      "label": "Déconnexion",
+      "type": "link",
+      "x": 0,
+      "y": 798,
+      "width": 478,
+      "height": 72,
+      "tap": false
+    },
+    {
+      "label": "Voir le site Kayloo",
+      "type": "link",
+      "x": 1993,
+      "y": 8,
+      "width": 315,
+      "height": 96,
+      "tap": false
+    },
+    {
+      "label": "Français",
+      "type": "button",
+      "x": 2324,
+      "y": 20,
+      "width": 254,
+      "height": 72,
+      "tap": false
+    },
+    {
+      "label": "Menu utilisateur",
+      "type": "link",
+      "x": 2626,
+      "y": 16,
+      "width": 206,
+      "height": 80,
+      "tap": false
+    },
+    {
+      "label": "Soumettre les documents",
+      "type": "link",
+      "x": 1732,
+      "y": 234,
+      "width": 339,
+      "height": 40,
+      "tap": false
+    },
+    {
+      "label": "Paramètres du compte COMPTE Mon profil Réseaux sociaux Mon agence Validation SÉCURITÉ M...",
+      "type": "card",
+      "x": 496,
+      "y": 320,
+      "width": 2368,
+      "height": 1038,
+      "tap": false
+    },
+    {
+      "label": "COMPTE Mon profil Réseaux sociaux Mon agence Validation SÉCURITÉ Mot de passe Supprimer...",
+      "type": "card",
+      "x": 528,
+      "y": 440,
+      "width": 540,
+      "height": 608,
+      "tap": false
+    },
+    {
+      "label": "COMPTE Mon profil Réseaux sociaux Mon agence Validation SÉCURITÉ Mot de passe Supprimer...",
+      "type": "card",
+      "x": 530,
+      "y": 442,
+      "width": 536,
+      "height": 604,
+      "tap": false
+    },
+    {
+      "label": "Mon profil",
+      "type": "link",
+      "x": 546,
+      "y": 516,
+      "width": 504,
+      "height": 73,
+      "tap": false
+    },
+    {
+      "label": "Réseaux sociaux",
+      "type": "link",
+      "x": 546,
+      "y": 590,
+      "width": 504,
+      "height": 73,
+      "tap": false
+    },
+    {
+      "label": "Mon agence",
+      "type": "link",
+      "x": 546,
+      "y": 663,
+      "width": 504,
+      "height": 73,
+      "tap": false
+    },
+    {
+      "label": "Validation",
+      "type": "link",
+      "x": 546,
+      "y": 736,
+      "width": 504,
+      "height": 73,
+      "tap": false
+    },
+    {
+      "label": "Mot de passe",
+      "type": "link",
+      "x": 546,
+      "y": 883,
+      "width": 504,
+      "height": 73,
+      "tap": false
+    },
+    {
+      "label": "Supprimer mon compte",
+      "type": "link",
+      "x": 546,
+      "y": 957,
+      "width": 504,
+      "height": 73,
+      "tap": false
+    },
+    {
+      "label": "Validation de compte Vérifiez votre identité pour établir la confiance avec vos clients...",
+      "type": "card",
+      "x": 1116,
+      "y": 440,
+      "width": 1716,
+      "height": 886,
+      "tap": false
+    },
+    {
+      "label": "Validation de compte Vérifiez votre identité pour établir la confiance avec vos clients...",
+      "type": "card",
+      "x": 1118,
+      "y": 442,
+      "width": 1712,
+      "height": 882,
+      "tap": false
+    },
+    {
+      "label": "Validation de compte",
+      "type": "card",
+      "x": 1166,
+      "y": 490,
+      "width": 851,
+      "height": 48,
+      "tap": false
+    },
+    {
+      "label": "Mon Profil",
+      "type": "link",
+      "x": 2622,
+      "y": 490,
+      "width": 160,
+      "height": 40,
+      "tap": false
+    },
+    {
+      "label": "Statut",
+      "type": "link",
+      "x": 1166,
+      "y": 613,
+      "width": 132,
+      "height": 77,
+      "tap": false
+    },
+    {
+      "label": "Historique",
+      "type": "link",
+      "x": 1298,
+      "y": 613,
+      "width": 184,
+      "height": 75,
+      "tap": false
+    }
+  ],
+  "image": {
+    "width": 2880,
+    "height": 1620
+  }
+}

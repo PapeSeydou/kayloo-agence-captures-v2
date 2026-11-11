@@ -1,0 +1,80 @@
+import asyncio
+import logging
+from typing import Optional, Tuple
+
+from sqlalchemy import select
+
+from models.agency import Agency
+from models.particulier_wallet import ParticulierWallet
+from models.credit_order import CreditOrder
+from models.subscription_plan import SubscriptionPlan
+from repositories.credit_order import CreditOrderRepository
+from services.base import BaseService, commit_or_rollback
+
+logger = logging.getLogger(__name__)
+
+
+class CreditOrderService(BaseService[CreditOrder]):
+    def __init__(self, repository: CreditOrderRepository):
+        super().__init__(repository)
+
+    async def create_order_and_init_payment(
+        self, owner_id, plan_id: str, payment_method: str, portal: str, *, owner_kind: str = "agency",
+    ) -> Tuple[Optional[str], Optional[str]]:
+        """Crée la commande et initialise le paiement pour l'achat d'un palier
+        (SubscriptionPlan — prix, crédits et quotas sont désormais portés par
+        le palier lui-même, CreditPack n'est plus utilisé pour les nouveaux
+        achats). `owner_kind` vaut 'agency' ou 'particulier' — détermine sur
+        quelle table `owner_id` pointe et quelle colonne de rattachement
+        (agency_id/user_id) porter sur la commande. Retourne (redirect_url,
+        None) si succès, (None, 'invalid') si le palier/le propriétaire n'est
+        pas valide pour ce portail (no-op silencieux, comme avant), (None,
+        'payment_error') si l'initialisation du paiement échoue."""
+        session = self.repository.db
+        plan = await session.get(SubscriptionPlan, plan_id)
+        owner_fk: dict
+        if owner_kind == "particulier":
+            wallet = (await session.execute(
+                select(ParticulierWallet).where(ParticulierWallet.user_id == owner_id)
+            )).scalar_one_or_none()
+            if not (plan and plan.is_active and plan.portal == portal and wallet):
+                return None, "invalid"
+            owner_fk = {"user_id": wallet.user_id}
+        else:
+            agency = await session.get(Agency, owner_id)
+            if not (plan and plan.is_active and plan.portal == portal and agency):
+                return None, "invalid"
+            owner_fk = {"agency_id": agency.id}
+
+        order = CreditOrder(
+            **owner_fk,
+            plan_id=plan.id,
+            portal=portal,
+            credit_unit=plan.monthly_visibility_credits or 0,
+            price=plan.price,
+            payment_method=payment_method,
+            status="pending",
+        )
+        session.add(order)
+        await session.flush()
+
+        try:
+            from core.payment.registry import get_provider
+            provider = get_provider(payment_method, portal=portal)
+            intent = await asyncio.to_thread(
+                provider.create_payment,
+                amount_fcfa=plan.price,
+                order_id=str(order.id),
+                description=f"Pack {plan.name} — {plan.monthly_visibility_credits or 0} crédit(s)",
+            )
+        except Exception:
+            logger.exception("Payment init failed for order %s", order.id)
+            await session.rollback()
+            return None, "payment_error"
+
+        order.provider_order_id = intent.provider_order_id
+        error = await commit_or_rollback(session, logger, "Payment init failed for order %s", order.id)
+        if error:
+            return None, "payment_error"
+        self.last_payment = (intent, order, plan)
+        return intent.redirect_url, None

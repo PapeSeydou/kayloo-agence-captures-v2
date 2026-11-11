@@ -1,0 +1,13 @@
+{
+  "screen": "10_packages_all__card-business",
+  "element": {
+    "label": "Business",
+    "type": "card",
+    "x": 28,
+    "y": 28,
+    "width": 476,
+    "height": 800,
+    "tap": true
+  },
+  "note": "Crop 2x de l'element (marge 14 px CSS), coordonnees dans l'image du crop."
+}

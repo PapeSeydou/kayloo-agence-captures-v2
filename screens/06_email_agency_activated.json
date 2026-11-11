@@ -1,0 +1,41 @@
+{
+  "screen": "06_email_agency_activated",
+  "file": "06_email_agency_activated.png",
+  "url": "file:///C:/Users/log/OneDrive/Bureau/SEPRO/kayloo_siteweb/.agents/capture-v2/out/email_agency_active.html",
+  "viewport": {
+    "width": 1440,
+    "height": 810
+  },
+  "device_scale_factor": 2,
+  "full_page": true,
+  "scroll": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 810
+  },
+  "elements": [
+    {
+      "label": "Accéder à mon espace →",
+      "type": "link",
+      "x": 1198,
+      "y": 912,
+      "width": 483,
+      "height": 90,
+      "tap": false
+    },
+    {
+      "label": "contact@kayloo.immo",
+      "type": "link",
+      "x": 1413,
+      "y": 1257,
+      "width": 217,
+      "height": 26,
+      "tap": false
+    }
+  ],
+  "image": {
+    "width": 2880,
+    "height": 1620
+  }
+}
