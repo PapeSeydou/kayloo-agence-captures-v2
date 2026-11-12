@@ -136,3 +136,27 @@ Archived in `_replaced/`: the previous v1-scene-05b-statut (17.70 s), v1-scene-0
 and v2-scene-02-packs-detail (23.26 s). Note that `_replaced/` also holds the very first takes, which share the
 names `v1-scene-07-documents-Kore.wav` and `v2-scene-02-packs-Kore.wav` with today's active files; the active
 ones are in `voice/`, the historical ones in `voice/_replaced/`.
+
+## Update, six takes for the re-shot intro and menu scenes (2026-11-12)
+
+Same model, same voice, same style prompt string, the same 150 ms silence and the same loudness target.
+All six use the model's expression tags ([chuckle] once, [excited] in three takes).
+
+| File | Duration (s) | Transcript matches | Tries | Remarks |
+|---|---|---|---|---|
+| v1-scene-01b-site-Kore.wav | 8.88 | yes | 4 | New scene. All three attempts read the slash of "Connexion / Inscription" aloud as "slash", so the separator became a comma; not one word changed. The kept take transcribes as "Connexion, Inscription". |
+| v1-scene-02-compte-Kore.wav | 11.01 | yes | 1 | Replaces v1-scene-02-compte-code. [chuckle] is not spoken, it produces a short laugh after "un mot de passe". |
+| v1-scene-08-valide-Kore.wav | 9.37 | yes | 2 | Replaces the 7.12 s take. Attempt 1 turned [excited] into audible "Ah ah !" words; attempt 2 keeps the energy without extra words. |
+| v2-scene-04-ajout-Kore.wav | 10.76 | yes | 1 | Replaces the 7.86 s take. Both ASRs hear "Biens", "Annonces", "Nouveau bien" and "vente ou location"; Whisper writes the button as "Nouveaux biens" once, Qwen hears the singular as scripted. |
+| v2-scene-06-validation-Kore.wav | 7.76 | yes | 1 | Replaces the 5.74 s take. [excited] not spoken. |
+| v2-scene-07-enligne-Kore.wav | 8.73 | yes | 1 | Replaces the 6.68 s take. "Compte" and "Mes notifications" both heard. |
+
+Levels: -14.84, -14.82, -14.85, -14.78, -14.81 and -14.84 dBFS, peaks 0.759, 0.794, 0.853, 0.787, 0.796 and
+0.793, so no clipping and no drift against the rest of the set. Lead and tail measure 0.15 s except
+v2-scene-04, whose lead is 0.32 s because the first syllable rises softly through the trim threshold, and
+v2-scene-07 with 0.24 s for the same reason. The digital silence is 150 ms in every file.
+
+Archived in `_replaced/`: the previous v1-scene-02-compte-code (15.10 s), v1-scene-08-valide (7.12 s),
+v2-scene-04-ajout (7.86 s), v2-scene-06-validation (5.74 s) and v2-scene-07-enligne (6.68 s). Note that
+`_replaced/` also keeps the older `v1-scene-02-compte-Kore.wav`, which now shares its name with this
+session's active take; the active files are in `voice/`, the historical ones in `voice/_replaced/`.
